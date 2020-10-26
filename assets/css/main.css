@@ -107,18 +107,23 @@ body, input, select, textarea {
       font-size: 9pt; } }
 
 a {
-  -moz-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-  -webkit-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-  -ms-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
-  transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
+  -moz-transition: color 0.2s , border-bottom-color 0.2s ease-in-out;
+  -webkit-transition: color 0.2s , border-bottom-color 0.2s ease-in-out;
+  -ms-transition: color 0.2s , border-bottom-color 0.2s ease-in-out;
+  transition: color 0.2s , border-bottom-color 0.2s ease-in-out;
   border-bottom: dotted 1px;
   color: white;
   text-decoration: none; }
   a:hover {
-    border-bottom-color: #f56a6a;
-    color: white !important; }
+    border-bottom-color: white;
+    color: black !important; }
     a:hover strong {
-      color: inherit; }
+      color: black; }
+      
+      #menu ul li a.active {
+        color: black;
+      }
+    
 
 strong, b {
   color: #3d4449;
@@ -167,9 +172,17 @@ h6 {
 
 @media screen and (max-width: 980px) {
   h1 {
-    font-size: 3.25em; } }
+    font-size: 3.25em; } 
+    .main {
+      padding: 5em 3em 3em 3em ;
+    }
+
+  }
 
 @media screen and (max-width: 736px) {
+  .main {
+    padding: 3em 1.5em 1em 1.5em ;
+  }
   h1 {
     font-size: 2em;
     line-height: 1.4; }
@@ -859,6 +872,12 @@ hr {
           .row.gtr-200.gtr-uniform > * {
             padding-top: 3em; } }
   @media screen and (max-width: 480px) {
+    /* Main */
+
+			.main {
+				padding: 2em 1.5em 0.1em 1.5em ;
+      }
+      
     .row {
       display: flex;
       flex-wrap: wrap;
@@ -1056,8 +1075,8 @@ textarea {
   input[type="url"]:focus,
   select:focus,
   textarea:focus {
-    border-color: #f56a6a;
-    box-shadow: 0 0 0 1px #f56a6a; }
+    border-color: white;
+    box-shadow: 0 0 0 1px white; }
 
 select {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='rgba(210, 215, 217, 0.75)' /%3E%3C/svg%3E");
@@ -1236,7 +1255,7 @@ input[type="radio"] + label:before {
     margin: 0 0 2em 0;
     width: 100%; }
     .image.fit img {
-      width: 100%; }
+       }
   .image.main {
     display: block;
     margin: 0 0 3em 0;
@@ -1422,7 +1441,7 @@ ul.pagination {
       text-align: center; }
       ul.pagination li > .page.active {
         background-color: white;
-        color: #ffffff !important; }
+        color: ##979da3 !important; }
         ul.pagination li > .page.active:hover {
           background-color: white; }
         ul.pagination li > .page.active:active {
@@ -1561,7 +1580,7 @@ button,
     input[type="button"].primary:hover,
     button.primary:hover,
     .button.primary:hover {
-      background-color: whitte; }
+      background-color: #979da3; }
     input[type="submit"].primary:active,
     input[type="reset"].primary:active,
     input[type="button"].primary:active,
@@ -1802,6 +1821,7 @@ button,
       .posts article:nth-last-child(1):after, .posts article:nth-last-child(2):after {
         display: none; } }
   @media screen and (max-width: 736px) {
+    
     .posts {
       margin: 0 0 2em -4.5em;
       width: calc(100% + 4.5em); }
@@ -2217,15 +2237,15 @@ button,
     display: block;
     font-size: 0.9em;
     padding: 0.625em 0; }
-    #menu ul a:hover, #menu ul span:hover {
-      color: white;; }
+    #menu ul a:hover,#menu ul a.active, #menu ul span:hover {
+      color: #979da3;; }
     #menu ul a.opener, #menu ul span.opener {
       -moz-transition: color 0.2s ease-in-out;
       -webkit-transition: color 0.2s ease-in-out;
       -ms-transition: color 0.2s ease-in-out;
       transition: color 0.2s ease-in-out;
       text-decoration: none;
-      -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
       position: relative; }
       #menu ul a.opener:before, #menu ul span.opener:before {
         -moz-osx-font-smoothing: grayscale;
@@ -2248,7 +2268,7 @@ button,
         position: absolute;
         right: 0; }
       #menu ul a.opener:hover:before, #menu ul span.opener:hover:before {
-        color:  white;; }
+        color:  #979da3;; }
       #menu ul a.opener.active + ul, #menu ul span.opener.active + ul {
         display: block; }
       #menu ul a.opener.active:before, #menu ul span.opener.active:before {
@@ -2491,3 +2511,125 @@ button,
       color: #212529;
       line-height: 1.5;
     }
+
+
+
+    .main {
+      padding: 6em 0 4em 0 ;
+    }
+  
+      .main.style1 {
+        background: #fff;
+      }
+  
+      .main.style2 {
+        background-color: #333;
+        color: rgba(255, 255, 255, 0.75);
+        background-attachment: fixed,							fixed;
+        background-image: url("images/overlay1.png"), url("../../images/header.jpg");
+        background-size: auto,							cover;
+      }
+  
+        .main.style2 a {
+          border-bottom-color: rgba(255, 255, 255, 0.5);
+        }
+  
+          .main.style2 a:hover {
+            color: #979da3;
+          }
+  
+        .main.style2 h1, .main.style2 h2, .main.style2 h3, .main.style2 h4, .main.style2 h5, .main.style2 h6, .main.style2 strong, .main.style2 b {
+          color: #ffffff;
+        }
+  
+        .main.style2 header p {
+          color: #ffffff;
+        }
+  
+        .main.style2 header.major:after {
+          background: #ffffff;
+        }
+  
+        .main.style2 input[type="submit"],
+        .main.style2 input[type="reset"],
+        .main.style2 input[type="button"],
+        .main.style2 button,
+        .main.style2 .button {
+          box-shadow: inset 0 0 0 1px #ffffff;
+          color: #ffffff !important;
+        }
+  
+          .main.style2 input[type="submit"]:hover,
+          .main.style2 input[type="reset"]:hover,
+          .main.style2 input[type="button"]:hover,
+          .main.style2 button:hover,
+          .main.style2 .button:hover {
+            background-color: rgba(255, 255, 255, 0.125);
+          }
+  
+          .main.style2 input[type="submit"]:active,
+          .main.style2 input[type="reset"]:active,
+          .main.style2 input[type="button"]:active,
+          .main.style2 button:active,
+          .main.style2 .button:active {
+            background-color: rgba(255, 255, 255, 0.25);
+          }
+  
+          .main.style2 input[type="submit"].primary,
+          .main.style2 input[type="reset"].primary,
+          .main.style2 input[type="button"].primary,
+          .main.style2 button.primary,
+          .main.style2 .button.primary {
+            background-color: #ffffff;
+            box-shadow: inset 0 0 0 1px #ffffff !important;
+            color: #333 !important;
+          }
+  
+            .main.style2 input[type="submit"].primary:hover,
+            .main.style2 input[type="reset"].primary:hover,
+            .main.style2 input[type="button"].primary:hover,
+            .main.style2 button.primary:hover,
+            .main.style2 .button.primary:hover {
+              background-color: rgba(255, 255, 255, 0.125) !important;
+              color: #ffffff !important;
+            }
+  
+            .main.style2 input[type="submit"].primary:active,
+            .main.style2 input[type="reset"].primary:active,
+            .main.style2 input[type="button"].primary:active,
+            .main.style2 button.primary:active,
+            .main.style2 .button.primary:active {
+              background-color: rgba(255, 255, 255, 0.25) !important;
+            }
+  
+        .main.style2 ul.major-icons li .icon {
+          border-color: #ffffff;
+        }
+  
+        .main.style2 .icon.major {
+          color: #ffffff;
+        }
+  
+
+        .main {
+          padding: 4em 0 2em 0 ;
+        }
+  
+          .main.style2 {
+            background-attachment: scroll;
+          }
+  
+
+	@media screen and (max-width: 320px) {
+
+		
+
+		/* Main */
+
+			.main {
+				padding: 2em 1em 0.1em 1em ;
+			}
+
+		
+
+	}
